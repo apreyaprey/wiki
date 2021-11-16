@@ -98,6 +98,14 @@ def create(request):
             else:
                 util.save_entry(title, textarea)
 
+                converted_page = markdowner.convert(textarea)
+
+                return render(request, "encyclopedia/entry.html", {
+                'content': converted_page,
+                'form': NewSearch(),
+                'title': title
+                })
+
     return render(request, "encyclopedia/create.html", {
         'content': Content(),
         'form': NewSearch()
