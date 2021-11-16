@@ -101,9 +101,9 @@ def create(request):
                 converted_page = markdowner.convert(textarea)
 
                 return render(request, "encyclopedia/entry.html", {
-                'content': converted_page,
-                'form': NewSearch(),
-                'title': title
+                    'content': converted_page,
+                    'form': NewSearch(),
+                    'title': title
                 })
 
     return render(request, "encyclopedia/create.html", {
